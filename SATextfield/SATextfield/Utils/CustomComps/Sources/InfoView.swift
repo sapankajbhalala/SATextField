@@ -67,8 +67,6 @@ class Triangle: UIView {
       firstPointX = 0.5
       secondPointX = 0
       thirdPointY = 1
-    } else {
-      
     }
     aPath.move(to: CGPoint(x: self.firstPointX * rect.width, y: self.firstPointY * rect.height))
     aPath.addLine(to: CGPoint(x: self.secondPointX * rect.width, y: self.secondPointY * rect.height))

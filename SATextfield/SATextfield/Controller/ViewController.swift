@@ -8,10 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, SATextfieldDelegate {
 
   @IBOutlet weak var txtNormal: UITextField!
-  @IBOutlet weak var txtSA: SATextfield!
   @IBOutlet weak var txtSAUnderLine: SATextfield!
   @IBOutlet weak var txtSADashLine: SATextfield!
   @IBOutlet weak var txtSABorder: SATextfield!
@@ -24,6 +23,8 @@ class ViewController: UIViewController {
   
   @IBOutlet weak var conScrollviewBottom: NSLayoutConstraint!
   
+  
+  // MARK: - View Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -31,46 +32,83 @@ class ViewController: UIViewController {
                                            name: UIResponder.keyboardWillChangeFrameNotification,
                                            object: nil)
     
+    /*
+     SATextfield Dropdown upside direction textfield
+     */
     txtSADropDownUpDire.dropDownOptions = ["One","Two","Three","Four","Five"]
     txtSADropDownUpDire.type = .dropdown
     txtSADropDownUpDire.dropDownBackgroundColor = UIColor.lightGray
     txtSADropDownUpDire.placeholder = "Select"
+    txtSADropDownUpDire.textFieldDelegate = self
     
+    /*
+     SATextfield Dropdown downside direction textfield
+     */
     txtSADropDownDownDire.dropDownOptions = ["1","2","3","4","5"]
     txtSADropDownDownDire.type = .dropdown
     txtSADropDownDownDire.dropDownBackgroundColor = UIColor.lightGray
     txtSADropDownDownDire.placeholder = "Select"
+    txtSADropDownDownDire.textFieldDelegate = self
     
-    txtSA.borderStyle = .line
-    
+    /*
+     SATextfield Underline with custom color
+     */
     txtSAUnderLine.lineWidth = 2
     txtSAUnderLine.lineColor = UIColor.darkGray
     txtSAUnderLine.type = .underLine
     txtSAUnderLine.placeholder = "Underline"
     
+    /*
+     SATextfield Dashline with custom color
+     */
     txtSADashLine.lineWidth = 2
     txtSADashLine.lineColor = UIColor.darkGray
     txtSADashLine.type = .dashedLine
     
+    /*
+     SATextfield Border with custom color
+     */
     txtSABorder.borderWidth = 2
     txtSABorder.borderColor = UIColor.darkGray
     txtSABorder.type = .border
     
+    /*
+     SATextfield Border with custom color, corner radius
+     */
     txtSABorderWithCornerRadius.borderWidth = 2
     txtSABorderWithCornerRadius.borderColor = UIColor.darkGray
     txtSABorderWithCornerRadius.cornerRadius = 5
     txtSABorderWithCornerRadius.type = .borderWithCornerRadius
     
+    /*
+     SATextfield password
+     */
     txtSAPassword.type = .password
     
+    /*
+     SATextfield floaty
+     */
     txtSAFloty.type = .floaty
     
+    /*
+     SATextfield InfoView
+     */
     txtSAInfoView.infoViewText = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
     txtSAInfoView.infoViewBackColor = .darkGray
     txtSAInfoView.type = .infoView
 
   }
-
+  
+  // MARK: - SAtextField Delegate
+  func dropDown(_ textfield: SATextfield, didSelectItem title: String) {
+    if textfield == txtSADropDownUpDire {
+      print("UpDire:",title)
+    } else if textfield == txtSADropDownDownDire {
+      print("DownDire:",title)
+    }
+  }
+  
+  // MARK: - UDF
   @objc func keyboardNotification(notification: NSNotification) {
     if let userInfo = notification.userInfo {
       let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
