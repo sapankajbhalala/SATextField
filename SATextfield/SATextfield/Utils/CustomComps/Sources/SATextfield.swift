@@ -149,7 +149,7 @@ public class SATextfield: UITextField {
     layer.strokeColor = lineColor.cgColor
     layer.lineWidth = lineWidth
     let path = CGMutablePath()
-    path.addLines(between: [CGPoint(x: 0, y: self.bounds.maxY - lineWidth),CGPoint(x: self.frame.maxX, y: self.bounds.maxY)])
+    path.addLines(between: [CGPoint(x: 0, y: self.bounds.maxY - lineWidth),CGPoint(x: self.bounds.maxX, y: self.bounds.maxY)])
     layer.path = path
     return layer
   }()
@@ -160,7 +160,7 @@ public class SATextfield: UITextField {
     shapeLayer.lineWidth = lineWidth
     shapeLayer.lineDashPattern = [lineWidth,lineWidth] as [NSNumber]
     let path = CGMutablePath()
-    path.addLines(between: [CGPoint(x: 0, y: self.bounds.maxY - lineWidth),CGPoint(x: self.frame.maxX, y: self.bounds.maxY)])
+    path.addLines(between: [CGPoint(x: 0, y: self.bounds.maxY - lineWidth),CGPoint(x: self.bounds.maxX, y: self.bounds.maxY)])
     shapeLayer.path = path
     return shapeLayer
   }()
