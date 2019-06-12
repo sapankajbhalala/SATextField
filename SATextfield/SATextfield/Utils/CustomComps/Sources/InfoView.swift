@@ -51,15 +51,14 @@ class InfoView: UIView {
 }
 
 
-@IBDesignable
 class Triangle: UIView {
-  @IBInspectable var color: UIColor = .red
-  @IBInspectable var firstPointX: CGFloat = 0
-  @IBInspectable var firstPointY: CGFloat = 0
-  @IBInspectable var secondPointX: CGFloat = 0.5
-  @IBInspectable var secondPointY: CGFloat = 1
-  @IBInspectable var thirdPointX: CGFloat = 1
-  @IBInspectable var thirdPointY: CGFloat = 0
+  var color: UIColor = .red
+  var firstPointX: CGFloat = 0
+  var firstPointY: CGFloat = 0
+  var secondPointX: CGFloat = 0.5
+  var secondPointY: CGFloat = 1
+  var thirdPointX: CGFloat = 1
+  var thirdPointY: CGFloat = 0
   var isUp: Bool = false
   override func draw(_ rect: CGRect) {
     let aPath = UIBezierPath()

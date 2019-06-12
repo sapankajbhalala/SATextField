@@ -20,7 +20,7 @@ public extension FloatyTextFieldDelegate {
   func textFieldTextChanged(underLineTextField: SATextfield) { }
 }
 
-protocol SATextfieldDelegate: class {
+public protocol SATextfieldDelegate: class {
   func dropDown(_ textfield: SATextfield, didSelectItem title: String)
 }
 extension SATextfieldDelegate {

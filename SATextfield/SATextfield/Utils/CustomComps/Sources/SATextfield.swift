@@ -33,6 +33,7 @@ public class SATextfield: UITextField {
    Floaty, DropDown, InfoView
    */
   private func setup() {
+    borderStyle = .none
     if type == .floaty {
       borderStyle = .none
       floatyNeededConstraint.append(floatyHeightConstraint)
@@ -49,7 +50,7 @@ public class SATextfield: UITextField {
       dropView.translatesAutoresizingMaskIntoConstraints = false
       self.superview?.addSubview(dropView)
       self.superview?.bringSubviewToFront(dropView)
-      if (frame.origin.y + frame.size.height) > UIScreen.main.bounds.size.height {
+      if (frame.origin.y + frame.size.height + 150) > UIScreen.main.bounds.size.height {
         dropView.bottomAnchor.constraint(equalTo: self.topAnchor).isActive = true
       } else {
         dropView.topAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
@@ -66,7 +67,7 @@ public class SATextfield: UITextField {
       infoLabelView.translatesAutoresizingMaskIntoConstraints = false
       self.superview?.addSubview(infoLabelView)
       self.superview?.bringSubviewToFront(infoLabelView)
-      if (frame.origin.y + frame.size.height) > UIScreen.main.bounds.size.height {
+      if (frame.origin.y + frame.size.height + 150) > UIScreen.main.bounds.size.height {
         infoLabelView.bottomAnchor.constraint(equalTo: self.topAnchor, constant: -3).isActive = true
         infoLabelView.vwArrow.isUp = false
         infoLabelView.vwArrow.topAnchor.constraint(equalTo: infoLabelView.bottomAnchor, constant: 0).isActive = true
@@ -85,13 +86,13 @@ public class SATextfield: UITextField {
   // ===================
   // MARK: - Variables
   // ===================
-  var type: SATextfieldType = .simple {
+  public var type: SATextfieldType = .simple {
     didSet {
       setup()
     }
   }
   
-  weak var textFieldDelegate: SATextfieldDelegate?
+  public weak var textFieldDelegate: SATextfieldDelegate?
   
   private var floatyLineHeight: CGFloat { return font?.pointSize ?? 0 }/// editing text height
   private var floatyPlaceholderHeight: CGFloat { return floatyPlaceholderFont?.pointSize ?? floatyLineHeight }/// placeholder text height
@@ -111,44 +112,55 @@ public class SATextfield: UITextField {
   }()
 
   
-  //For DropDownTextfield
-  var dropDownOptions: [String] = [String]()
+  /* dropDownOptions : Use in
+   Types: dropdown */
+  public var dropDownOptions: [String] = [String]() {
+    didSet {
+      dropView.dropDownOptions = dropDownOptions
+    }
+  }
   private lazy var dropView = DropDownView()
   private var height = NSLayoutConstraint()
-  var dropDownBackgroundColor: UIColor = .white
+  /* dropDownBackgroundColor : Use in
+   Types: dropdown */
+  public var dropDownBackgroundColor: UIColor = .white {
+    didSet {
+      dropView.backgroundColor = dropDownBackgroundColor
+    }
+  }
   private var isOpen = false // Check dropdown show/hide
   private lazy var dropdownBtn: UIButton = {
     let btn = UIButton(type: .custom)
     btn.frame = CGRect(x: 0, y: 0, width: 30, height: 30  )
     btn.addTarget(self, action: #selector(btnDropDownTapped(sender:)), for: .touchUpInside)
-    if (frame.origin.y + frame.size.height) > UIScreen.main.bounds.size.height {
-      btn.setImage(UIImage(named: "up_arrrow"), for: .normal)
+    if (frame.origin.y + frame.size.height + 150) > UIScreen.main.bounds.size.height {
+      btn.setImage(UIImage.fromWrappedBundleImage(#imageLiteral(resourceName: "up_arrrow")), for: .normal)
     } else {
-      btn.setImage(UIImage(named: "down_arrow"), for: .normal)
+      btn.setImage(UIImage.fromWrappedBundleImage(#imageLiteral(resourceName: "down_arrow")), for: .normal)
     }
     return btn
   }()
   //For DropDownTextfield
   
   
-  open lazy var underLineLayer: CAShapeLayer = {
+  private lazy var underLineLayer: CAShapeLayer = {
     let layer = CAShapeLayer(layer: self.layer)
     layer.lineCap = CAShapeLayerLineCap.round
     layer.strokeColor = lineColor.cgColor
     layer.lineWidth = lineWidth
     let path = CGMutablePath()
-    path.addLines(between: [CGPoint(x: 0, y: self.bounds.maxY - lineWidth),CGPoint(x: self.bounds.maxX, y: self.bounds.maxY)])
+    path.addLines(between: [CGPoint(x: 0, y: self.bounds.maxY - lineWidth),CGPoint(x: self.frame.maxX, y: self.bounds.maxY)])
     layer.path = path
     return layer
   }()
   
-  open lazy var dashLineLayer: CAShapeLayer = {
+  private lazy var dashLineLayer: CAShapeLayer = {
     let shapeLayer = CAShapeLayer()
     shapeLayer.strokeColor = lineColor.cgColor
     shapeLayer.lineWidth = lineWidth
     shapeLayer.lineDashPattern = [lineWidth,lineWidth] as [NSNumber]
     let path = CGMutablePath()
-    path.addLines(between: [CGPoint(x: 0, y: self.bounds.maxY - lineWidth),CGPoint(x: self.bounds.maxX, y: self.bounds.maxY)])
+    path.addLines(between: [CGPoint(x: 0, y: self.bounds.maxY - lineWidth),CGPoint(x: self.frame.maxX, y: self.bounds.maxY)])
     shapeLayer.path = path
     return shapeLayer
   }()
@@ -161,7 +173,7 @@ public class SATextfield: UITextField {
     }
   }
   /// current content status of textfield (can be empty, filled)
-  open var floatyContentStatus: FloatyTextFieldContentStatus = .empty {
+  private var floatyContentStatus: FloatyTextFieldContentStatus = .empty {
     didSet {
       guard floatyContentStatus != oldValue else {
         return
@@ -205,9 +217,9 @@ public class SATextfield: UITextField {
     let btn = UIButton(type: .custom)
     btn.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
     if isSecureTextEntry {
-      btn.setImage(UIImage(named: "pass_show"), for: .normal)
+      btn.setImage(UIImage.fromWrappedBundleImage(#imageLiteral(resourceName: "pass_show")), for: .normal)
     } else {
-      btn.setImage(UIImage(named: "pass_hide"), for: .normal)
+      btn.setImage(UIImage.fromWrappedBundleImage(#imageLiteral(resourceName: "pass_hide")), for: .normal)
     }
     btn.addTarget(self, action: #selector(btnPasswordTapped(sender:)), for: .touchUpInside)
     return btn
@@ -215,8 +227,27 @@ public class SATextfield: UITextField {
 
   //InfoView Textfield
   private lazy var infoLabelView = InfoView()
-  var infoViewText: String = ""
-  var infoViewBackColor: UIColor = UIColor.lightGray
+  /* infoViewText : Use in
+   Types: infoView */
+  open var infoViewText: String = "" {
+    didSet {
+      infoLabelView.lblDesc.text = infoViewText
+    }
+  }
+  /* infoViewBackColor : Use in
+   Types: infoView */
+  open var infoViewBackColor: UIColor = UIColor.lightGray {
+    didSet {
+      infoLabelView.backgroundColor = infoViewBackColor
+    }
+  }
+  /* infoViewTextColor : Use in
+   Types: infoView */
+  open var infoViewTextColor: UIColor = UIColor.lightGray {
+    didSet {
+      infoLabelView.lblDesc.textColor = infoViewTextColor
+    }
+  }
   private var infoView: UIButton {
     let btn = UIButton(type: .infoLight)
     btn.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
@@ -227,39 +258,54 @@ public class SATextfield: UITextField {
   //===================
   // MARK: IBInspectable
   //===================
+  /* lineWidth : Use in
+   Types: underLine, dashedLine */
   @IBInspectable open var lineWidth: CGFloat = 1 {
     didSet {
       if oldValue != lineWidth {
+        underLineLayer.lineWidth = lineWidth
+        dashLineLayer.lineWidth = lineWidth
         setNeedsDisplay()
       }
     }
   }
+  /* lineColor : Use in
+   Types: underLine, dashedLine */
   @IBInspectable open var lineColor: UIColor = .lightGray {
     didSet {
       if oldValue != lineColor {
+        underLineLayer.strokeColor = lineColor.cgColor
+        dashLineLayer.strokeColor = lineColor.cgColor
         setNeedsDisplay()
       }
     }
   }
-  
+  /* borderWidth : Use in
+   Types: border, borderWithCornerRadius */
   @IBInspectable open var borderWidth: CGFloat = 1 {
     didSet {
       if oldValue != borderWidth {
+        self.layer.borderWidth = borderWidth
         setNeedsDisplay()
       }
     }
   }
-  
+  /* borderColor : Use in
+   Types: border, borderWithCornerRadius */
   @IBInspectable open var borderColor: UIColor = .gray {
     didSet {
       if oldValue != borderColor {
+        self.layer.borderColor = borderColor.cgColor
         setNeedsDisplay()
       }
     }
   }
+  /* borderColor : Use in
+   Types: borderWithCornerRadius */
   @IBInspectable open var cornerRadius: CGFloat = 0 {
     didSet {
       if oldValue != cornerRadius {
+        self.layer.cornerRadius = cornerRadius
         setNeedsDisplay()
       }
     }
@@ -415,7 +461,7 @@ extension SATextfield {
     
     UIView.animate(withDuration: animationDuration, animations: {
       self.dropView.layoutIfNeeded()
-      if (self.frame.origin.y + self.frame.size.height) > UIScreen.main.bounds.size.height {
+      if (self.frame.origin.y + self.frame.size.height + 150) > UIScreen.main.bounds.size.height {
         self.dropView.center.y -= self.dropView.frame.height / 2
       } else {
         self.dropView.center.y += self.dropView.frame.height / 2
@@ -427,7 +473,7 @@ extension SATextfield {
     height.constant = 0
     NSLayoutConstraint.activate([height])
     UIView.animate(withDuration: animationDuration, animations: {
-      if (self.frame.origin.y + self.frame.size.height) > UIScreen.main.bounds.size.height {
+      if (self.frame.origin.y + self.frame.size.height + 150) > UIScreen.main.bounds.size.height {
         self.dropView.center.y += self.dropView.frame.height / 2
       } else {
         self.dropView.center.y -= self.dropView.frame.height / 2

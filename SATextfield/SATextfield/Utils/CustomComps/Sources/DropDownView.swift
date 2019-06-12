@@ -8,9 +8,13 @@
 
 import UIKit
 
-class DropDownView: UIView {
+open class DropDownView: UIView {
 
-  var dropDownOptions = [String]()
+  var dropDownOptions: [String] = [String]() {
+    didSet {
+      tableView.reloadData()
+    }
+  }
   
   var tableView = UITableView()
   var delegate : dropDownProtocol!
@@ -20,7 +24,7 @@ class DropDownView: UIView {
     super.init(frame: frame)
     setupDropDown()
   }
-  required init?(coder aDecoder: NSCoder) {
+  required public init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     setupDropDown()
   }
@@ -54,18 +58,18 @@ protocol dropDownProtocol {
 
 // DropDownView Tableview Delegate
 extension DropDownView: UITableViewDelegate {
-  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+  public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     delegate.dropDownPressed(string: dropDownOptions[indexPath.row])
   }
 }
 
 // DropDownView Tableview Datasource
 extension DropDownView: UITableViewDataSource {
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return dropDownOptions.count
   }
   
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+  public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = UITableViewCell()
     cell.textLabel?.text = dropDownOptions[indexPath.row]
     cell.backgroundColor = backgroundColor

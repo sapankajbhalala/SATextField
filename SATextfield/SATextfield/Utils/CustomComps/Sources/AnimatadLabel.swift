@@ -7,7 +7,6 @@
 //
 
 import UIKit
-@IBDesignable
 open class AnimatableLabel: UIView {
   //============
   // MARK: - inits
@@ -50,10 +49,7 @@ open class AnimatableLabel: UIView {
     }
   }
   
-  //===================
-  // MARK: IBInspectable
-  //===================
-  @IBInspectable open var text: String? {
+  open var text: String? {
     set {
       textLayer.string = newValue
       setContentSize()
@@ -63,7 +59,7 @@ open class AnimatableLabel: UIView {
     }
     
   }
-  @IBInspectable open var textColor: UIColor! {
+  open var textColor: UIColor! {
     set {
       textLayer.foregroundColor = newValue.cgColor
     }
@@ -125,7 +121,7 @@ extension AnimatableLabel {
     let constraintRect = CGSize(width: CGFloat.greatestFiniteMagnitude, height: .greatestFiniteMagnitude)
     let boundingRect = newText.boundingRect(with: constraintRect,
                                             options: .usesLineFragmentOrigin,
-                                            attributes: [.font: font],
+                                            attributes: [.font: font!],
                                             context: nil)
     widthConstraint.constant = boundingRect.width + 8
     heightConstraint.constant = boundingRect.height

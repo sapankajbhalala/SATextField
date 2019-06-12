@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 //SATextfield type Enums
-enum SATextfieldType: Int {
+public enum SATextfieldType: Int {
   case simple = 0
   case underLine = 1
   case dashedLine = 2
@@ -37,4 +37,19 @@ public struct FloatyTextFieldContentStatus: OptionSet {
     self.rawValue = rawValue
   }
 }
+
+struct WrappedBundleImage: _ExpressibleByImageLiteral {
+  let image: UIImage?
+  init(imageLiteralResourceName name: String) {
+    let bundle = Bundle(for: SATextfield.self)
+    image = UIImage(named: name, in: bundle, compatibleWith: nil)
+  }
+}
+
+extension UIImage {
+  static func fromWrappedBundleImage(_ wrappedImage: WrappedBundleImage) -> UIImage? {
+    return wrappedImage.image
+  }
+}
+
 
