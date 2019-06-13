@@ -1,9 +1,9 @@
 # SATextField
 
-SATextfield library is made with intension to have extended functionality. You can have Dropdown, Underline, Floaty textfield, Infoview, PasswordView with textfield.
+SATextfield library is made with intension to have extended functionality. You can have Dropdown, Underline, Floaty textfield, Infoview, PasswordView with textfield. This code provides all in one tool to manage textfield.
 
-This code provides all in one tool to manage textfield.
-
+# Getting Started
+### uick Layout Design
 There are some of types that use to quick layout design:
 
 * .underLine
