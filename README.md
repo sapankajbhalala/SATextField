@@ -1,6 +1,6 @@
 # SATextField
 
-SATextfield library is made with intension to have extended functionality. You can have Dropdown, Underline, Floaty textfield, Infoview, PasswordView with textfield. This code provides all in one tool to manage textfield.
+This framework is made with intension to have extended functionality to use UITextField. You can have Dropdown, Underline, Floaty textfield, Infoview, PasswordView with textfield. This code provides all in one tool to manage textfield.
 
 # Getting Started
 ### Quick Layout Design
