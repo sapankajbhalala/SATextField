@@ -39,10 +39,14 @@ public struct FloatyTextFieldContentStatus: OptionSet {
 }
 
 struct WrappedBundleImage: _ExpressibleByImageLiteral {
-  let image: UIImage?
+  var image: UIImage?
   init(imageLiteralResourceName name: String) {
     let bundle = Bundle(for: SATextfield.self)
-    image = UIImage(named: name, in: bundle, compatibleWith: nil)
+    if let url = bundle.url(forResource: "SATextfield", withExtension: "bundle") {
+      let finalbundle = Bundle(url: url)
+      image = UIImage(named: name, in: finalbundle, compatibleWith: nil)!
+    }
+    image = UIImage()
   }
 }
 
