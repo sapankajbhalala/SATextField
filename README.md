@@ -17,6 +17,6 @@ There are some of types that use to quick layout design:
 
 ```swift
 textfield.type = .underline
-
-![alt text](https://github.com/sapankajbhalala/SATextField/blob/master/SATextfield/SATextfieldEx/Resources/Images/SATextfield_Underline.png)
 ```
+![alt text](https://github.com/sapankajbhalala/SATextField/blob/master/SATextfield/SATextfieldEx/Resources/Images/SATextfield_Underline.png)
+
