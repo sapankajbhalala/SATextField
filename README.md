@@ -73,9 +73,9 @@ iOS 10*
 
 Xcode 10
 
-## Installing
+## Installation
 
-## Using Pod
+### Using Pod
 You want to add pod 'SATextfield' similar to the following to your Podfile
 ```
 target 'MyApp' do
@@ -85,7 +85,7 @@ target 'MyApp' do
 end
 ```
 
-## Using Carthage
+### Using Carthage
 
 Carthage is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
 
@@ -100,7 +100,7 @@ To integrate SATextfield into your Xcode project using Carthage, specify it in y
 	
 Run "carthage update" to build the framework and drag the built SATextfield.framework into your Xcode project.
 
-## Manually
+### Manually
 
 If you prefer not to use any of the aforementioned dependency managers, you can integrate SATextfield into your project manually. Just copy the source folder in your project directory from [Source](https://github.com/sapankajbhalala/SATextField/tree/master/SATextfield/SATextfieldEx/Utils/CustomComps/Sources)
 
