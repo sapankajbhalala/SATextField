@@ -144,14 +144,14 @@ public class SATextfield: UITextField {
   
   
   private lazy var underLineLayer: CAShapeLayer = {
-    let layer = CAShapeLayer(layer: self.layer)
-    layer.lineCap = CAShapeLayerLineCap.round
-    layer.strokeColor = lineColor.cgColor
-    layer.lineWidth = lineWidth
+    let shapeLayer = CAShapeLayer()
+    shapeLayer.lineCap = CAShapeLayerLineCap.round
+    shapeLayer.strokeColor = lineColor.cgColor
+    shapeLayer.lineWidth = lineWidth
     let path = CGMutablePath()
     path.addLines(between: [CGPoint(x: 0, y: self.bounds.maxY - lineWidth),CGPoint(x: self.bounds.maxX, y: self.bounds.maxY)])
-    layer.path = path
-    return layer
+    shapeLayer.path = path
+    return shapeLayer
   }()
   
   private lazy var dashLineLayer: CAShapeLayer = {
@@ -263,8 +263,8 @@ public class SATextfield: UITextField {
   @IBInspectable open var lineWidth: CGFloat = 1 {
     didSet {
       if oldValue != lineWidth {
-        underLineLayer.lineWidth = lineWidth
-        dashLineLayer.lineWidth = lineWidth
+//        underLineLayer.lineWidth = lineWidth
+//        dashLineLayer.lineWidth = lineWidth
         setNeedsDisplay()
       }
     }
@@ -274,8 +274,8 @@ public class SATextfield: UITextField {
   @IBInspectable open var lineColor: UIColor = .lightGray {
     didSet {
       if oldValue != lineColor {
-        underLineLayer.strokeColor = lineColor.cgColor
-        dashLineLayer.strokeColor = lineColor.cgColor
+//        underLineLayer.strokeColor = lineColor.cgColor
+//        dashLineLayer.strokeColor = lineColor.cgColor
         setNeedsDisplay()
       }
     }
@@ -320,8 +320,6 @@ public class SATextfield: UITextField {
       if underLineLayer.superlayer == nil {
         layer.addSublayer(underLineLayer)
       }
-    }
-    if type == .underLine {
     } else if type == .dashedLine {
       if dashLineLayer.superlayer == nil {
         layer.addSublayer(dashLineLayer)

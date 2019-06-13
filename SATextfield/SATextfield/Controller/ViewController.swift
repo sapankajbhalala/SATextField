@@ -33,6 +33,22 @@ class ViewController: UIViewController, SATextfieldDelegate {
                                            object: nil)
     
     /*
+     SATextfield Underline with custom color
+     */
+    txtSAUnderLine.lineWidth = 2
+    txtSAUnderLine.lineColor = UIColor.darkGray
+    txtSAUnderLine.type = .underLine
+    txtSAUnderLine.placeholder = "Underline"
+    
+    /*
+     SATextfield Dashline with custom color
+     */
+    txtSADashLine.lineWidth = 2
+    txtSADashLine.lineColor = UIColor.darkGray
+    txtSADashLine.type = .dashedLine
+    
+    
+    /*
      SATextfield Dropdown upside direction textfield
      */
     txtSADropDownUpDire.dropDownOptions = ["One","Two","Three","Four","Five"]
@@ -50,20 +66,7 @@ class ViewController: UIViewController, SATextfieldDelegate {
     txtSADropDownDownDire.placeholder = "Select"
     txtSADropDownDownDire.textFieldDelegate = self
     
-    /*
-     SATextfield Underline with custom color
-     */
-    txtSAUnderLine.lineWidth = 2
-    txtSAUnderLine.lineColor = UIColor.darkGray
-    txtSAUnderLine.type = .underLine
-    txtSAUnderLine.placeholder = "Underline"
     
-    /*
-     SATextfield Dashline with custom color
-     */
-    txtSADashLine.lineWidth = 2
-    txtSADashLine.lineColor = UIColor.darkGray
-    txtSADashLine.type = .dashedLine
     
     /*
      SATextfield Border with custom color
@@ -98,6 +101,12 @@ class ViewController: UIViewController, SATextfieldDelegate {
     txtSAInfoView.type = .infoView
 
   }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    
+  }
+  
   
   // MARK: - SAtextField Delegate
   func dropDown(_ textfield: SATextfield, didSelectItem title: String) {
