@@ -10,13 +10,6 @@
 		B00B11B022B22550000F0FF7 /* SATextfield.h in Headers */ = {isa = PBXBuildFile; fileRef = B00B11AE22B22550000F0FF7 /* SATextfield.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B00B11B322B22550000F0FF7 /* SATextfield.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00B11AC22B22550000F0FF7 /* SATextfield.framework */; };
 		B00B11B422B22550000F0FF7 /* SATextfield.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B00B11AC22B22550000F0FF7 /* SATextfield.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B00B11BF22B2277B000F0FF7 /* SATextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DC017622A796C500696557 /* SATextfield.swift */; };
-		B00B11C022B2277B000F0FF7 /* Struct+Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DC017822A7CF4800696557 /* Struct+Enums.swift */; };
-		B00B11C122B2277B000F0FF7 /* SATextfieldAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0DC017A22A7E6FE00696557 /* SATextfieldAssets.xcassets */; };
-		B00B11C222B2277B000F0FF7 /* AnimatadLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B068BC1922A8DDF500963FA4 /* AnimatadLabel.swift */; };
-		B00B11C322B2277B000F0FF7 /* SATextfieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B068BC1B22A8E38500963FA4 /* SATextfieldDelegate.swift */; };
-		B00B11C422B2277B000F0FF7 /* DropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B068BC1D22A9315600963FA4 /* DropDownView.swift */; };
-		B00B11C522B2277B000F0FF7 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B5E07C22AA80310098F1F6 /* InfoView.swift */; };
 		B00B11D122B22914000F0FF7 /* SATextfield_DropdownDirDownEx.png in Resources */ = {isa = PBXBuildFile; fileRef = B00B11C722B22914000F0FF7 /* SATextfield_DropdownDirDownEx.png */; };
 		B00B11D222B22914000F0FF7 /* SATextfield_Border.png in Resources */ = {isa = PBXBuildFile; fileRef = B00B11C822B22914000F0FF7 /* SATextfield_Border.png */; };
 		B00B11D322B22914000F0FF7 /* SATextfield_BorderWithCorner.png in Resources */ = {isa = PBXBuildFile; fileRef = B00B11C922B22914000F0FF7 /* SATextfield_BorderWithCorner.png */; };
@@ -27,6 +20,13 @@
 		B00B11D822B22914000F0FF7 /* SATextfield_DropdownDirUp.png in Resources */ = {isa = PBXBuildFile; fileRef = B00B11CE22B22914000F0FF7 /* SATextfield_DropdownDirUp.png */; };
 		B00B11D922B22914000F0FF7 /* SATextfield_InfoView.png in Resources */ = {isa = PBXBuildFile; fileRef = B00B11CF22B22914000F0FF7 /* SATextfield_InfoView.png */; };
 		B00B11DA22B22914000F0FF7 /* SATextfield_Underline.png in Resources */ = {isa = PBXBuildFile; fileRef = B00B11D022B22914000F0FF7 /* SATextfield_Underline.png */; };
+		B00B11DB22B2299F000F0FF7 /* SATextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DC017622A796C500696557 /* SATextfield.swift */; };
+		B00B11DC22B2299F000F0FF7 /* Struct+Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DC017822A7CF4800696557 /* Struct+Enums.swift */; };
+		B00B11DD22B2299F000F0FF7 /* SATextfieldAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0DC017A22A7E6FE00696557 /* SATextfieldAssets.xcassets */; };
+		B00B11DE22B2299F000F0FF7 /* AnimatadLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B068BC1922A8DDF500963FA4 /* AnimatadLabel.swift */; };
+		B00B11DF22B2299F000F0FF7 /* SATextfieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B068BC1B22A8E38500963FA4 /* SATextfieldDelegate.swift */; };
+		B00B11E022B2299F000F0FF7 /* DropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B068BC1D22A9315600963FA4 /* DropDownView.swift */; };
+		B00B11E122B2299F000F0FF7 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B5E07C22AA80310098F1F6 /* InfoView.swift */; };
 		B0DC015922A794FE00696557 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DC015822A794FE00696557 /* AppDelegate.swift */; };
 		B0DC015B22A794FE00696557 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DC015A22A794FE00696557 /* ViewController.swift */; };
 		B0DC015E22A794FE00696557 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0DC015C22A794FE00696557 /* Main.storyboard */; };
@@ -353,6 +353,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B00B11DD22B2299F000F0FF7 /* SATextfieldAssets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,7 +372,6 @@
 				B00B11D422B22914000F0FF7 /* SATextfield_Password.png in Resources */,
 				B00B11D322B22914000F0FF7 /* SATextfield_BorderWithCorner.png in Resources */,
 				B0DC016022A7950000696557 /* Assets.xcassets in Resources */,
-				B00B11C122B2277B000F0FF7 /* SATextfieldAssets.xcassets in Resources */,
 				B0DC015E22A794FE00696557 /* Main.storyboard in Resources */,
 				B00B11D222B22914000F0FF7 /* SATextfield_Border.png in Resources */,
 			);
@@ -384,6 +384,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B00B11DF22B2299F000F0FF7 /* SATextfieldDelegate.swift in Sources */,
+				B00B11E022B2299F000F0FF7 /* DropDownView.swift in Sources */,
+				B00B11DE22B2299F000F0FF7 /* AnimatadLabel.swift in Sources */,
+				B00B11DB22B2299F000F0FF7 /* SATextfield.swift in Sources */,
+				B00B11E122B2299F000F0FF7 /* InfoView.swift in Sources */,
+				B00B11DC22B2299F000F0FF7 /* Struct+Enums.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,13 +397,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B00B11C522B2277B000F0FF7 /* InfoView.swift in Sources */,
 				B0DC015B22A794FE00696557 /* ViewController.swift in Sources */,
-				B00B11C022B2277B000F0FF7 /* Struct+Enums.swift in Sources */,
-				B00B11C322B2277B000F0FF7 /* SATextfieldDelegate.swift in Sources */,
-				B00B11C422B2277B000F0FF7 /* DropDownView.swift in Sources */,
-				B00B11BF22B2277B000F0FF7 /* SATextfield.swift in Sources */,
-				B00B11C222B2277B000F0FF7 /* AnimatadLabel.swift in Sources */,
 				B0DC015922A794FE00696557 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -609,6 +609,7 @@
 		B0DC016822A7950000696557 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
@@ -629,6 +630,7 @@
 		B0DC016922A7950000696557 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
