@@ -1,6 +1,8 @@
 # SATextField
 
-SATextfield is useful for textfield layout.
+SATextfield library is made with intension to have extended functionality. You can have Dropdown, Underline, Floaty textfield, Infoview, PasswordView with textfield.
+
+This code provides all in one tool to manage textfield.
 
 There are some of types that use to quick layout design:
 
