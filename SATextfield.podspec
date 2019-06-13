@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name             = 'SATextfield'
-s.version          = '0.0.6'
+s.version          = '0.0.7'
 s.summary          = 'SATextfield use to quick design layout of different type of UITextField.'
 
 s.description      = <<-DESC
@@ -27,5 +27,5 @@ s.source           = { :git => "https://github.com/sapankajbhalala/SATextfield.g
 
 s.ios.deployment_target = '10.0'
 s.source_files = 'SATextfield/SATextfieldEx/Utils/CustomComps/Sources/*.swift'
-s.resource_bundle = { 'SATextfield' => 'SATextfield/SATextfieldEx/Utils/CustomComps/Sources/*.xcassets' }
+s.resource_bundle = { 'SATextfield' => ['SATextfield/SATextfieldEx/Utils/CustomComps/Sources/**/*.png'] }
 end
