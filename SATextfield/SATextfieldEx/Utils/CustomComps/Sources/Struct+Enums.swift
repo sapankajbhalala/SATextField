@@ -42,11 +42,7 @@ struct WrappedBundleImage: _ExpressibleByImageLiteral {
   var image: UIImage?
   init(imageLiteralResourceName name: String) {
     let bundle = Bundle(for: SATextfield.self)
-    if let url = bundle.url(forResource: "SATextfield", withExtension: "bundle") {
-      let finalbundle = Bundle(url: url)
-      image = UIImage(named: name, in: finalbundle, compatibleWith: nil)!
-    }
-    image = UIImage()
+      image = UIImage(named: name, in: bundle, compatibleWith: nil)!
   }
 }
 
