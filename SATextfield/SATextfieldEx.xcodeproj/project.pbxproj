@@ -7,26 +7,76 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B068BC1A22A8DDF500963FA4 /* AnimatadLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B068BC1922A8DDF500963FA4 /* AnimatadLabel.swift */; };
-		B068BC1C22A8E38500963FA4 /* SATextfieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B068BC1B22A8E38500963FA4 /* SATextfieldDelegate.swift */; };
-		B068BC1E22A9315600963FA4 /* DropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B068BC1D22A9315600963FA4 /* DropDownView.swift */; };
-		B0B5E07D22AA80310098F1F6 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B5E07C22AA80310098F1F6 /* InfoView.swift */; };
+		B00B11B022B22550000F0FF7 /* SATextfield.h in Headers */ = {isa = PBXBuildFile; fileRef = B00B11AE22B22550000F0FF7 /* SATextfield.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B00B11B322B22550000F0FF7 /* SATextfield.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00B11AC22B22550000F0FF7 /* SATextfield.framework */; };
+		B00B11B422B22550000F0FF7 /* SATextfield.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B00B11AC22B22550000F0FF7 /* SATextfield.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B00B11BF22B2277B000F0FF7 /* SATextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DC017622A796C500696557 /* SATextfield.swift */; };
+		B00B11C022B2277B000F0FF7 /* Struct+Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DC017822A7CF4800696557 /* Struct+Enums.swift */; };
+		B00B11C122B2277B000F0FF7 /* SATextfieldAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0DC017A22A7E6FE00696557 /* SATextfieldAssets.xcassets */; };
+		B00B11C222B2277B000F0FF7 /* AnimatadLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B068BC1922A8DDF500963FA4 /* AnimatadLabel.swift */; };
+		B00B11C322B2277B000F0FF7 /* SATextfieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B068BC1B22A8E38500963FA4 /* SATextfieldDelegate.swift */; };
+		B00B11C422B2277B000F0FF7 /* DropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B068BC1D22A9315600963FA4 /* DropDownView.swift */; };
+		B00B11C522B2277B000F0FF7 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B5E07C22AA80310098F1F6 /* InfoView.swift */; };
+		B00B11D122B22914000F0FF7 /* SATextfield_DropdownDirDownEx.png in Resources */ = {isa = PBXBuildFile; fileRef = B00B11C722B22914000F0FF7 /* SATextfield_DropdownDirDownEx.png */; };
+		B00B11D222B22914000F0FF7 /* SATextfield_Border.png in Resources */ = {isa = PBXBuildFile; fileRef = B00B11C822B22914000F0FF7 /* SATextfield_Border.png */; };
+		B00B11D322B22914000F0FF7 /* SATextfield_BorderWithCorner.png in Resources */ = {isa = PBXBuildFile; fileRef = B00B11C922B22914000F0FF7 /* SATextfield_BorderWithCorner.png */; };
+		B00B11D422B22914000F0FF7 /* SATextfield_Password.png in Resources */ = {isa = PBXBuildFile; fileRef = B00B11CA22B22914000F0FF7 /* SATextfield_Password.png */; };
+		B00B11D522B22914000F0FF7 /* SATextfield_DashLine.png in Resources */ = {isa = PBXBuildFile; fileRef = B00B11CB22B22914000F0FF7 /* SATextfield_DashLine.png */; };
+		B00B11D622B22914000F0FF7 /* SATextfield_DropdownDirDown.png in Resources */ = {isa = PBXBuildFile; fileRef = B00B11CC22B22914000F0FF7 /* SATextfield_DropdownDirDown.png */; };
+		B00B11D722B22914000F0FF7 /* SATextfield_Floaty.png in Resources */ = {isa = PBXBuildFile; fileRef = B00B11CD22B22914000F0FF7 /* SATextfield_Floaty.png */; };
+		B00B11D822B22914000F0FF7 /* SATextfield_DropdownDirUp.png in Resources */ = {isa = PBXBuildFile; fileRef = B00B11CE22B22914000F0FF7 /* SATextfield_DropdownDirUp.png */; };
+		B00B11D922B22914000F0FF7 /* SATextfield_InfoView.png in Resources */ = {isa = PBXBuildFile; fileRef = B00B11CF22B22914000F0FF7 /* SATextfield_InfoView.png */; };
+		B00B11DA22B22914000F0FF7 /* SATextfield_Underline.png in Resources */ = {isa = PBXBuildFile; fileRef = B00B11D022B22914000F0FF7 /* SATextfield_Underline.png */; };
 		B0DC015922A794FE00696557 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DC015822A794FE00696557 /* AppDelegate.swift */; };
 		B0DC015B22A794FE00696557 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DC015A22A794FE00696557 /* ViewController.swift */; };
 		B0DC015E22A794FE00696557 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0DC015C22A794FE00696557 /* Main.storyboard */; };
 		B0DC016022A7950000696557 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0DC015F22A7950000696557 /* Assets.xcassets */; };
 		B0DC016322A7950000696557 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0DC016122A7950000696557 /* LaunchScreen.storyboard */; };
-		B0DC017722A796C500696557 /* SATextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DC017622A796C500696557 /* SATextfield.swift */; };
-		B0DC017922A7CF4800696557 /* Struct+Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DC017822A7CF4800696557 /* Struct+Enums.swift */; };
-		B0DC017B22A7E6FE00696557 /* SATextfieldAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0DC017A22A7E6FE00696557 /* SATextfieldAssets.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		B00B11B122B22550000F0FF7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0DC014D22A794FE00696557 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B00B11AB22B22550000F0FF7;
+			remoteInfo = SATextfield;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B00B118022B21D8D000F0FF7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B00B11B422B22550000F0FF7 /* SATextfield.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		B00B11AC22B22550000F0FF7 /* SATextfield.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SATextfield.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B00B11AE22B22550000F0FF7 /* SATextfield.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SATextfield.h; sourceTree = "<group>"; };
+		B00B11AF22B22550000F0FF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B00B11C722B22914000F0FF7 /* SATextfield_DropdownDirDownEx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SATextfield_DropdownDirDownEx.png; sourceTree = "<group>"; };
+		B00B11C822B22914000F0FF7 /* SATextfield_Border.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SATextfield_Border.png; sourceTree = "<group>"; };
+		B00B11C922B22914000F0FF7 /* SATextfield_BorderWithCorner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SATextfield_BorderWithCorner.png; sourceTree = "<group>"; };
+		B00B11CA22B22914000F0FF7 /* SATextfield_Password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SATextfield_Password.png; sourceTree = "<group>"; };
+		B00B11CB22B22914000F0FF7 /* SATextfield_DashLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SATextfield_DashLine.png; sourceTree = "<group>"; };
+		B00B11CC22B22914000F0FF7 /* SATextfield_DropdownDirDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SATextfield_DropdownDirDown.png; sourceTree = "<group>"; };
+		B00B11CD22B22914000F0FF7 /* SATextfield_Floaty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SATextfield_Floaty.png; sourceTree = "<group>"; };
+		B00B11CE22B22914000F0FF7 /* SATextfield_DropdownDirUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SATextfield_DropdownDirUp.png; sourceTree = "<group>"; };
+		B00B11CF22B22914000F0FF7 /* SATextfield_InfoView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SATextfield_InfoView.png; sourceTree = "<group>"; };
+		B00B11D022B22914000F0FF7 /* SATextfield_Underline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SATextfield_Underline.png; sourceTree = "<group>"; };
 		B068BC1922A8DDF500963FA4 /* AnimatadLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatadLabel.swift; sourceTree = "<group>"; };
 		B068BC1B22A8E38500963FA4 /* SATextfieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATextfieldDelegate.swift; sourceTree = "<group>"; };
 		B068BC1D22A9315600963FA4 /* DropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownView.swift; sourceTree = "<group>"; };
 		B0B5E07C22AA80310098F1F6 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
-		B0DC015522A794FE00696557 /* SATextfield.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SATextfield.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0DC015522A794FE00696557 /* SATextfieldEx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SATextfieldEx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0DC015822A794FE00696557 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0DC015A22A794FE00696557 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B0DC015D22A794FE00696557 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -39,20 +89,55 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		B0DC015222A794FE00696557 /* Frameworks */ = {
+		B00B11A922B22550000F0FF7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B0DC015222A794FE00696557 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B00B11B322B22550000F0FF7 /* SATextfield.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B00B11AD22B22550000F0FF7 /* SATextfield */ = {
+			isa = PBXGroup;
+			children = (
+				B00B11AE22B22550000F0FF7 /* SATextfield.h */,
+				B00B11AF22B22550000F0FF7 /* Info.plist */,
+			);
+			path = SATextfield;
+			sourceTree = "<group>";
+		};
+		B00B11C622B22879000F0FF7 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				B00B11C822B22914000F0FF7 /* SATextfield_Border.png */,
+				B00B11C922B22914000F0FF7 /* SATextfield_BorderWithCorner.png */,
+				B00B11CB22B22914000F0FF7 /* SATextfield_DashLine.png */,
+				B00B11CC22B22914000F0FF7 /* SATextfield_DropdownDirDown.png */,
+				B00B11C722B22914000F0FF7 /* SATextfield_DropdownDirDownEx.png */,
+				B00B11CE22B22914000F0FF7 /* SATextfield_DropdownDirUp.png */,
+				B00B11CD22B22914000F0FF7 /* SATextfield_Floaty.png */,
+				B00B11CF22B22914000F0FF7 /* SATextfield_InfoView.png */,
+				B00B11CA22B22914000F0FF7 /* SATextfield_Password.png */,
+				B00B11D022B22914000F0FF7 /* SATextfield_Underline.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		B0DC014C22A794FE00696557 = {
 			isa = PBXGroup;
 			children = (
-				B0DC015722A794FE00696557 /* SATextfield */,
+				B0DC015722A794FE00696557 /* SATextfieldEx */,
+				B00B11AD22B22550000F0FF7 /* SATextfield */,
 				B0DC015622A794FE00696557 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,12 +145,13 @@
 		B0DC015622A794FE00696557 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B0DC015522A794FE00696557 /* SATextfield.app */,
+				B0DC015522A794FE00696557 /* SATextfieldEx.app */,
+				B00B11AC22B22550000F0FF7 /* SATextfield.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B0DC015722A794FE00696557 /* SATextfield */ = {
+		B0DC015722A794FE00696557 /* SATextfieldEx */ = {
 			isa = PBXGroup;
 			children = (
 				B0DC016B22A7965300696557 /* Controller */,
@@ -76,7 +162,7 @@
 				B0DC015822A794FE00696557 /* AppDelegate.swift */,
 				B0DC016422A7950000696557 /* Info.plist */,
 			);
-			path = SATextfield;
+			path = SATextfieldEx;
 			sourceTree = "<group>";
 		};
 		B0DC016B22A7965300696557 /* Controller */ = {
@@ -90,6 +176,7 @@
 		B0DC016C22A7965300696557 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B00B11C622B22879000F0FF7 /* Images */,
 				B0DC015F22A7950000696557 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -175,14 +262,26 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		B00B11A722B22550000F0FF7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B00B11B022B22550000F0FF7 /* SATextfield.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		B0DC015422A794FE00696557 /* SATextfield */ = {
+		B00B11AB22B22550000F0FF7 /* SATextfield */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B0DC016722A7950000696557 /* Build configuration list for PBXNativeTarget "SATextfield" */;
+			buildConfigurationList = B00B11B522B22550000F0FF7 /* Build configuration list for PBXNativeTarget "SATextfield" */;
 			buildPhases = (
-				B0DC015122A794FE00696557 /* Sources */,
-				B0DC015222A794FE00696557 /* Frameworks */,
-				B0DC015322A794FE00696557 /* Resources */,
+				B00B11A722B22550000F0FF7 /* Headers */,
+				B00B11A822B22550000F0FF7 /* Sources */,
+				B00B11A922B22550000F0FF7 /* Frameworks */,
+				B00B11AA22B22550000F0FF7 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -190,7 +289,26 @@
 			);
 			name = SATextfield;
 			productName = SATextfield;
-			productReference = B0DC015522A794FE00696557 /* SATextfield.app */;
+			productReference = B00B11AC22B22550000F0FF7 /* SATextfield.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B0DC015422A794FE00696557 /* SATextfieldEx */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0DC016722A7950000696557 /* Build configuration list for PBXNativeTarget "SATextfieldEx" */;
+			buildPhases = (
+				B0DC015122A794FE00696557 /* Sources */,
+				B0DC015222A794FE00696557 /* Frameworks */,
+				B0DC015322A794FE00696557 /* Resources */,
+				B00B118022B21D8D000F0FF7 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B00B11B222B22550000F0FF7 /* PBXTargetDependency */,
+			);
+			name = SATextfieldEx;
+			productName = SATextfield;
+			productReference = B0DC015522A794FE00696557 /* SATextfieldEx.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -203,12 +321,15 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Solution Analysts";
 				TargetAttributes = {
+					B00B11AB22B22550000F0FF7 = {
+						CreatedOnToolsVersion = 10.2;
+					};
 					B0DC015422A794FE00696557 = {
 						CreatedOnToolsVersion = 10.2;
 					};
 				};
 			};
-			buildConfigurationList = B0DC015022A794FE00696557 /* Build configuration list for PBXProject "SATextfield" */;
+			buildConfigurationList = B0DC015022A794FE00696557 /* Build configuration list for PBXProject "SATextfieldEx" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -221,42 +342,75 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B0DC015422A794FE00696557 /* SATextfield */,
+				B0DC015422A794FE00696557 /* SATextfieldEx */,
+				B00B11AB22B22550000F0FF7 /* SATextfield */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B00B11AA22B22550000F0FF7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B0DC015322A794FE00696557 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B00B11D722B22914000F0FF7 /* SATextfield_Floaty.png in Resources */,
+				B00B11D122B22914000F0FF7 /* SATextfield_DropdownDirDownEx.png in Resources */,
 				B0DC016322A7950000696557 /* LaunchScreen.storyboard in Resources */,
+				B00B11D922B22914000F0FF7 /* SATextfield_InfoView.png in Resources */,
+				B00B11DA22B22914000F0FF7 /* SATextfield_Underline.png in Resources */,
+				B00B11D622B22914000F0FF7 /* SATextfield_DropdownDirDown.png in Resources */,
+				B00B11D522B22914000F0FF7 /* SATextfield_DashLine.png in Resources */,
+				B00B11D822B22914000F0FF7 /* SATextfield_DropdownDirUp.png in Resources */,
+				B00B11D422B22914000F0FF7 /* SATextfield_Password.png in Resources */,
+				B00B11D322B22914000F0FF7 /* SATextfield_BorderWithCorner.png in Resources */,
 				B0DC016022A7950000696557 /* Assets.xcassets in Resources */,
-				B0DC017B22A7E6FE00696557 /* SATextfieldAssets.xcassets in Resources */,
+				B00B11C122B2277B000F0FF7 /* SATextfieldAssets.xcassets in Resources */,
 				B0DC015E22A794FE00696557 /* Main.storyboard in Resources */,
+				B00B11D222B22914000F0FF7 /* SATextfield_Border.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B00B11A822B22550000F0FF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B0DC015122A794FE00696557 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0B5E07D22AA80310098F1F6 /* InfoView.swift in Sources */,
+				B00B11C522B2277B000F0FF7 /* InfoView.swift in Sources */,
 				B0DC015B22A794FE00696557 /* ViewController.swift in Sources */,
-				B0DC017922A7CF4800696557 /* Struct+Enums.swift in Sources */,
-				B068BC1C22A8E38500963FA4 /* SATextfieldDelegate.swift in Sources */,
-				B068BC1E22A9315600963FA4 /* DropDownView.swift in Sources */,
-				B0DC017722A796C500696557 /* SATextfield.swift in Sources */,
-				B068BC1A22A8DDF500963FA4 /* AnimatadLabel.swift in Sources */,
+				B00B11C022B2277B000F0FF7 /* Struct+Enums.swift in Sources */,
+				B00B11C322B2277B000F0FF7 /* SATextfieldDelegate.swift in Sources */,
+				B00B11C422B2277B000F0FF7 /* DropDownView.swift in Sources */,
+				B00B11BF22B2277B000F0FF7 /* SATextfield.swift in Sources */,
+				B00B11C222B2277B000F0FF7 /* AnimatadLabel.swift in Sources */,
 				B0DC015922A794FE00696557 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B00B11B222B22550000F0FF7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B00B11AB22B22550000F0FF7 /* SATextfield */;
+			targetProxy = B00B11B122B22550000F0FF7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B0DC015C22A794FE00696557 /* Main.storyboard */ = {
@@ -278,6 +432,64 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		B00B11B622B22550000F0FF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SATextfield/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.SATextfield;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B00B11B722B22550000F0FF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SATextfield/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.SATextfield;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		B0DC016522A7950000696557 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -400,13 +612,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = SATextfield/Info.plist;
+				INFOPLIST_FILE = SATextfieldEx/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.SATextfield;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.SATextfieldEx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -420,13 +632,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = SATextfield/Info.plist;
+				INFOPLIST_FILE = SATextfieldEx/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.SATextfield;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.SATextfieldEx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -437,7 +649,16 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B0DC015022A794FE00696557 /* Build configuration list for PBXProject "SATextfield" */ = {
+		B00B11B522B22550000F0FF7 /* Build configuration list for PBXNativeTarget "SATextfield" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B00B11B622B22550000F0FF7 /* Debug */,
+				B00B11B722B22550000F0FF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0DC015022A794FE00696557 /* Build configuration list for PBXProject "SATextfieldEx" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B0DC016522A7950000696557 /* Debug */,
@@ -446,7 +667,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B0DC016722A7950000696557 /* Build configuration list for PBXNativeTarget "SATextfield" */ = {
+		B0DC016722A7950000696557 /* Build configuration list for PBXNativeTarget "SATextfieldEx" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B0DC016822A7950000696557 /* Debug */,
