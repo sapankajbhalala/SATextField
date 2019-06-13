@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name             = 'SATextfield'
-s.version          = '0.0.3'
+s.version          = '0.0.4'
 s.summary          = 'SATextfield use to quick design layout of different type of UITextField.'
 
 s.description      = <<-DESC
