@@ -213,7 +213,7 @@ public class SATextfield: UITextField {
   }()
   
   //Password view
-  internal var passwordView: UIButton {
+  private var passwordView: UIButton {
     let btn = UIButton(type: .custom)
     btn.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
     if isSecureTextEntry {
@@ -320,7 +320,8 @@ public class SATextfield: UITextField {
       if underLineLayer.superlayer == nil {
         layer.addSublayer(underLineLayer)
       }
-    } else if type == .dashedLine {
+    }
+    if type == .dashedLine {
       if dashLineLayer.superlayer == nil {
         layer.addSublayer(dashLineLayer)
       }
@@ -361,9 +362,7 @@ public class SATextfield: UITextField {
     super.layoutSubviews()
     isLayoutCalled = true
   }
-  
-  
-  
+
 }
 
 extension SATextfield {
@@ -487,7 +486,6 @@ extension SATextfield {
 // MARK: - Override Variables
 // ===================
 extension SATextfield {
-
   override open var font: UIFont? {
     set {
       super.font = newValue
@@ -498,7 +496,6 @@ extension SATextfield {
       return super.font
     }
   }
-  
 }
 
 @objc
@@ -557,5 +554,4 @@ extension SATextfield: dropDownProtocol {
     hideDropDown()
     textFieldDelegate?.dropDown(self, didSelectItem: string)
   }
-  
 }

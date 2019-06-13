@@ -67,8 +67,6 @@ class ViewController: UIViewController, SATextfieldDelegate {
     txtSADropDownDownDire.placeholder = "Select"
     txtSADropDownDownDire.textFieldDelegate = self
     
-    
-    
     /*
      SATextfield Border with custom color
      */
