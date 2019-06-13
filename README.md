@@ -97,7 +97,7 @@ If you prefer not to use any of the aforementioned dependency managers, you can 
 import SATextfield
 
 class VC1: UIViewController{
-  @IBOutlet weak var textfield: UITextField!
+  @IBOutlet weak var textfield: SATextfield!
   
   override func viewDidLoad() {
     super.viewDidLoad()
