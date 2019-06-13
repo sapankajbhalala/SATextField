@@ -75,7 +75,7 @@ Xcode 10
 
 ## Installing
 
-## Pods
+## Using Pod
 You want to add pod 'SATextfield' similar to the following to your Podfile
 ```
 target 'MyApp' do
@@ -85,7 +85,7 @@ target 'MyApp' do
 end
 ```
 
-## Carthage
+## Using Carthage
 
 Carthage is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
 
