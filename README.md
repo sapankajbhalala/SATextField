@@ -20,3 +20,8 @@ textfield.type = .underline
 ```
 ![alt text](https://github.com/sapankajbhalala/SATextField/blob/master/SATextfield/SATextfieldEx/Resources/Images/SATextfield_Underline.png)
 
+```swift
+textfield.type = .dashedLine
+```
+![alt text](https://github.com/sapankajbhalala/SATextField/blob/master/SATextfield/SATextfieldEx/Resources/Images/SATextfield_DashedLine.png)
+
