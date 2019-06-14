@@ -36,24 +36,25 @@ class ViewController: UIViewController, SATextfieldDelegate {
     /*
      SATextfield Underline with custom color
      */
+    txtSAUnderLine.type = .underLine
     txtSAUnderLine.lineWidth = 2
     txtSAUnderLine.lineColor = UIColor.darkGray
-    txtSAUnderLine.type = .underLine
     txtSAUnderLine.placeholder = "Underline"
     
     /*
      SATextfield Dashline with custom color
      */
+    txtSADashLine.type = .dashedLine
     txtSADashLine.lineWidth = 2
     txtSADashLine.lineColor = UIColor.darkGray
-    txtSADashLine.type = .dashedLine
     
     
     /*
      SATextfield Dropdown upside direction textfield
      */
-    txtSADropDownUpDire.dropDownOptions = ["One","Two","Three","Four","Five"]
+    txtSADropDownUpDire.isAutoDetectDirection = true
     txtSADropDownUpDire.type = .dropdown
+    txtSADropDownUpDire.dropDownOptions = ["One","Two","Three","Four","Five"]
     txtSADropDownUpDire.dropDownBackgroundColor = UIColor.lightGray
     txtSADropDownUpDire.placeholder = "Select"
     txtSADropDownUpDire.textFieldDelegate = self
@@ -61,8 +62,8 @@ class ViewController: UIViewController, SATextfieldDelegate {
     /*
      SATextfield Dropdown downside direction textfield
      */
-    txtSADropDownDownDire.dropDownOptions = ["1","2","3","4","5"]
     txtSADropDownDownDire.type = .dropdown
+    txtSADropDownDownDire.dropDownOptions = ["1","2","3","4","5"]
     txtSADropDownDownDire.dropDownBackgroundColor = UIColor.lightGray
     txtSADropDownDownDire.placeholder = "Select"
     txtSADropDownDownDire.textFieldDelegate = self
@@ -70,17 +71,17 @@ class ViewController: UIViewController, SATextfieldDelegate {
     /*
      SATextfield Border with custom color
      */
+    txtSABorder.type = .border
     txtSABorder.borderWidth = 2
     txtSABorder.borderColor = UIColor.darkGray
-    txtSABorder.type = .border
     
     /*
      SATextfield Border with custom color, corner radius
      */
+    txtSABorderWithCornerRadius.type = .borderWithCornerRadius
     txtSABorderWithCornerRadius.borderWidth = 2
     txtSABorderWithCornerRadius.borderColor = UIColor.darkGray
     txtSABorderWithCornerRadius.cornerRadius = 5
-    txtSABorderWithCornerRadius.type = .borderWithCornerRadius
     
     /*
      SATextfield password
@@ -97,6 +98,7 @@ class ViewController: UIViewController, SATextfieldDelegate {
      */
     txtSAInfoView.infoViewText = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
     txtSAInfoView.infoViewBackColor = .darkGray
+    txtSAInfoView.isAutoDetectDirection = true
     txtSAInfoView.type = .infoView
 
   }

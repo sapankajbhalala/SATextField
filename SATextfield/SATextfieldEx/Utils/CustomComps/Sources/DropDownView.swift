@@ -18,7 +18,6 @@ open class DropDownView: UIView {
   
   var tableView = UITableView()
   var delegate : dropDownProtocol!
-  var dropDownBackgroundColor: UIColor = .white
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -40,7 +39,6 @@ open class DropDownView: UIView {
     tableView.dataSource = self
     
     tableView.translatesAutoresizingMaskIntoConstraints = false
-//    backgroundColor = dropDownBackgroundColor
     tableView.backgroundColor = backgroundColor
     self.addSubview(tableView)
     

@@ -36,37 +36,76 @@ public class SATextfield: UITextField {
     borderStyle = .none
     if type == .floaty {
       borderStyle = .none
-      floatyNeededConstraint.append(floatyHeightConstraint)
-      floatyPlaceholderLabel.text = placeholder
-      placeholder = nil
-      addTarget(self, action: #selector(self.formTextFieldDidBeginEditing), for: .editingDidBegin)
-      addTarget(self, action: #selector(self.formTextFieldDidEndEditing), for: .editingDidEnd)
-      addTarget(self, action: #selector(self.formTextFieldValueChanged), for: [.editingChanged, .valueChanged])
-      NSLayoutConstraint.activate(floatyNeededConstraint)
-      floatyAdjustHeight()
+      setupUIFloaty()
     } else if type == .dropdown {
-      dropView.dropDownOptions = dropDownOptions
-      dropView.delegate = self
-      dropView.translatesAutoresizingMaskIntoConstraints = false
-      self.superview?.addSubview(dropView)
-      self.superview?.bringSubviewToFront(dropView)
+      setupUIDropDown()
+    } else if type == .infoView {
+      borderStyle = .roundedRect
+      setupUIInfoview()
+    }
+  }
+  
+  private func setupUIFloaty() {
+    floatyNeededConstraint.append(floatyHeightConstraint)
+    floatyPlaceholderLabel.text = placeholder
+    placeholder = nil
+    addTarget(self, action: #selector(self.formTextFieldDidBeginEditing), for: .editingDidBegin)
+    addTarget(self, action: #selector(self.formTextFieldDidEndEditing), for: .editingDidEnd)
+    addTarget(self, action: #selector(self.formTextFieldValueChanged), for: [.editingChanged, .valueChanged])
+    NSLayoutConstraint.activate(floatyNeededConstraint)
+    floatyAdjustHeight()
+  }
+  
+  private func setupUIDropDown() {
+    dropView.dropDownOptions = dropDownOptions
+    dropView.delegate = self
+    dropView.translatesAutoresizingMaskIntoConstraints = false
+    self.superview?.addSubview(dropView)
+    self.superview?.bringSubviewToFront(dropView)
+    dropdownBtn = UIButton(type: .custom)
+    dropdownBtn.frame = CGRect(x: 0, y: 0, width: 30, height: 30  )
+    dropdownBtn.addTarget(self, action: #selector(btnDropDownTapped(sender:)), for: .touchUpInside)
+    setupAutoDetectDirectionDropdown()
+    dropView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+    dropView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
+    height = dropView.heightAnchor.constraint(equalToConstant: 0)
+    rightView = dropdownBtn
+    rightViewMode = .always
+  }
+  
+  fileprivate func setupAutoDetectDirectionDropdown() {
+    if isAutoDetectDirection {
       if (frame.origin.y + frame.size.height + 150) > UIScreen.main.bounds.size.height {
         dropView.bottomAnchor.constraint(equalTo: self.topAnchor).isActive = true
       } else {
         dropView.topAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
       }
-      dropView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-      dropView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
-      height = dropView.heightAnchor.constraint(equalToConstant: 0)
-      rightView = dropdownBtn
-      rightViewMode = .always
-    } else if type == .infoView {
-      borderStyle = .roundedRect
-      infoLabelView.lblDesc.text = infoViewText
-      infoLabelView.backgroundColor = infoViewBackColor
-      infoLabelView.translatesAutoresizingMaskIntoConstraints = false
-      self.superview?.addSubview(infoLabelView)
-      self.superview?.bringSubviewToFront(infoLabelView)
+      if (frame.origin.y + frame.size.height + 150) > UIScreen.main.bounds.size.height {
+        dropdownBtn.setImage(UIImage.fromWrappedBundleImage(#imageLiteral(resourceName: "up_arrrow")), for: .normal)
+      } else {
+        dropdownBtn.setImage(UIImage.fromWrappedBundleImage(#imageLiteral(resourceName: "down_arrow")), for: .normal)
+      }
+    } else {
+      dropView.topAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+      dropdownBtn.setImage(UIImage.fromWrappedBundleImage(#imageLiteral(resourceName: "down_arrow")), for: .normal)
+    }
+  }
+  
+  private func setupUIInfoview() {
+    infoLabelView.lblDesc.text = infoViewText
+    infoLabelView.backgroundColor = infoViewBackColor
+    infoLabelView.translatesAutoresizingMaskIntoConstraints = false
+    self.superview?.addSubview(infoLabelView)
+    self.superview?.bringSubviewToFront(infoLabelView)
+    setupAutoDetectDirectionInfoview()
+    infoLabelView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+    infoLabelView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
+    infoLabelView.isHidden = true
+    infoLabelView.alpha = 0
+  }
+  
+  fileprivate func setupAutoDetectDirectionInfoview() {
+    if isAutoDetectDirection {
       if (frame.origin.y + frame.size.height + 150) > UIScreen.main.bounds.size.height {
         infoLabelView.bottomAnchor.constraint(equalTo: self.topAnchor, constant: -3).isActive = true
         infoLabelView.vwArrow.isUp = false
@@ -76,10 +115,10 @@ public class SATextfield: UITextField {
         infoLabelView.vwArrow.isUp = true
         infoLabelView.vwArrow.bottomAnchor.constraint(equalTo: infoLabelView.topAnchor, constant: 0).isActive = true
       }
-      infoLabelView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-      infoLabelView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
-      infoLabelView.isHidden = true
-      infoLabelView.alpha = 0
+    } else {
+      infoLabelView.topAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+      infoLabelView.vwArrow.isUp = true
+      infoLabelView.vwArrow.bottomAnchor.constraint(equalTo: infoLabelView.topAnchor, constant: 0).isActive = true
     }
   }
 
@@ -128,18 +167,21 @@ public class SATextfield: UITextField {
       dropView.backgroundColor = dropDownBackgroundColor
     }
   }
-  private var isOpen = false // Check dropdown show/hide
-  private lazy var dropdownBtn: UIButton = {
-    let btn = UIButton(type: .custom)
-    btn.frame = CGRect(x: 0, y: 0, width: 30, height: 30  )
-    btn.addTarget(self, action: #selector(btnDropDownTapped(sender:)), for: .touchUpInside)
-    if (frame.origin.y + frame.size.height + 150) > UIScreen.main.bounds.size.height {
-      btn.setImage(UIImage.fromWrappedBundleImage(#imageLiteral(resourceName: "up_arrrow")), for: .normal)
-    } else {
-      btn.setImage(UIImage.fromWrappedBundleImage(#imageLiteral(resourceName: "down_arrow")), for: .normal)
+  /* dropDownTextColor : Use in
+   Types: dropdown */
+  public var isAutoDetectDirection: Bool = false {
+    didSet {
+      if oldValue != isAutoDetectDirection {
+        if isAutoDetectDirection {
+//          setupAutoDetectDirectionDropdown()
+//          setupAutoDetectDirectionInfoview()
+        }
+      }
     }
-    return btn
-  }()
+  }
+  
+  private var isOpen = false // Check dropdown show/hide
+  private lazy var dropdownBtn: UIButton = UIButton()
   //For DropDownTextfield
   
   
@@ -213,17 +255,7 @@ public class SATextfield: UITextField {
   }()
   
   //Password view
-  private var passwordView: UIButton {
-    let btn = UIButton(type: .custom)
-    btn.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-    if isSecureTextEntry {
-      btn.setImage(UIImage.fromWrappedBundleImage(#imageLiteral(resourceName: "pass_show")), for: .normal)
-    } else {
-      btn.setImage(UIImage.fromWrappedBundleImage(#imageLiteral(resourceName: "pass_hide")), for: .normal)
-    }
-    btn.addTarget(self, action: #selector(btnPasswordTapped(sender:)), for: .touchUpInside)
-    return btn
-  }
+  private var passwordView: UIButton = UIButton()
 
   //InfoView Textfield
   private lazy var infoLabelView = InfoView()
@@ -331,6 +363,7 @@ public class SATextfield: UITextField {
       setBorder(isRadius: true)
     } else if type == .password {
       self.isSecureTextEntry = true
+      setupUIPassword()
       rightView = passwordView
       rightViewMode = .always
     } else if type == .floaty {
@@ -370,6 +403,24 @@ extension SATextfield {
   //================
   // MARK: - UDF
   //================
+  private func setupUIPassword() {
+    passwordView = UIButton(type: .custom)
+    passwordView.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+    if isSecureTextEntry {
+      if let img = UIImage.fromWrappedBundleImage(#imageLiteral(resourceName: "pass_show")) {
+        passwordView.setImage(img, for: .normal)
+      } else {
+        passwordView.setImage(#imageLiteral(resourceName: "pass_show"), for: .normal)
+      }
+    } else {
+      if let img = UIImage.fromWrappedBundleImage(#imageLiteral(resourceName: "pass_hide")) {
+        passwordView.setImage(UIImage.fromWrappedBundleImage(#imageLiteral(resourceName: "pass_hide")), for: .normal)
+      } else {
+        passwordView.setImage(#imageLiteral(resourceName: "pass_hide"), for: .normal)
+      }
+    }
+    passwordView.addTarget(self, action: #selector(btnPasswordTapped(sender:)), for: .touchUpInside)
+  }
   /// textfield border
   private func setBorder(isRadius: Bool) {
     self.layer.borderColor = borderColor.cgColor
@@ -458,8 +509,12 @@ extension SATextfield {
     
     UIView.animate(withDuration: animationDuration, animations: {
       self.dropView.layoutIfNeeded()
-      if (self.frame.origin.y + self.frame.size.height + 150) > UIScreen.main.bounds.size.height {
-        self.dropView.center.y -= self.dropView.frame.height / 2
+      if self.isAutoDetectDirection {
+        if (self.frame.origin.y + self.frame.size.height + 150) > UIScreen.main.bounds.size.height {
+          self.dropView.center.y -= self.dropView.frame.height / 2
+        } else {
+          self.dropView.center.y += self.dropView.frame.height / 2
+        }
       } else {
         self.dropView.center.y += self.dropView.frame.height / 2
       }
@@ -470,8 +525,12 @@ extension SATextfield {
     height.constant = 0
     NSLayoutConstraint.activate([height])
     UIView.animate(withDuration: animationDuration, animations: {
-      if (self.frame.origin.y + self.frame.size.height + 150) > UIScreen.main.bounds.size.height {
-        self.dropView.center.y += self.dropView.frame.height / 2
+      if self.isAutoDetectDirection {
+        if (self.frame.origin.y + self.frame.size.height + 150) > UIScreen.main.bounds.size.height {
+          self.dropView.center.y += self.dropView.frame.height / 2
+        } else {
+          self.dropView.center.y -= self.dropView.frame.height / 2
+        }
       } else {
         self.dropView.center.y -= self.dropView.frame.height / 2
       }
@@ -518,6 +577,7 @@ extension SATextfield {
   //show hide password on password textfield
   private func btnPasswordTapped(sender: UIButton) {
     isSecureTextEntry = !isSecureTextEntry
+    setupUIPassword()
     rightView = passwordView
   }
   private func btnInfoViewTapped(sender: UIButton) {

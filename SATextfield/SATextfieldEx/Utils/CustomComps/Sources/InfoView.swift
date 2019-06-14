@@ -60,6 +60,14 @@ class Triangle: UIView {
   var thirdPointX: CGFloat = 1
   var thirdPointY: CGFloat = 0
   var isUp: Bool = false
+  
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+  }
+  required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+  }
+  
   override func draw(_ rect: CGRect) {
     let aPath = UIBezierPath()
     if isUp {
