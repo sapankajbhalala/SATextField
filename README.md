@@ -66,7 +66,14 @@ dropdown automatically define direction to show and hide.
 
 ```swift
 textfield.type = .infoView
+textfield.infoViewText = "Sample Text"
+textfield.infoViewBackColor = .darkGray
 ```
+Using ```isAutoDetectDirection = true //Default value is false```
+infoview automatically define direction to show and hide.
+
+
+
 ![alt text](https://github.com/sapankajbhalala/SATextField/blob/master/SATextfield/SATextfieldEx/Resources/Images/SATextfield_InfoView.png)
 
 
