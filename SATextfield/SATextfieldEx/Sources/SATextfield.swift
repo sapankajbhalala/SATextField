@@ -34,6 +34,7 @@ public class SATextfield: UITextField {
    */
   private func setup() {
     borderStyle = .none
+    self.heightAnchor.constraint(equalToConstant: 50).isActive = true
     if type == .floaty {
       borderStyle = .none
       setupUIFloaty()
