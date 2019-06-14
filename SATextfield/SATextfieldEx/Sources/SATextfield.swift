@@ -74,7 +74,8 @@ public class SATextfield: UITextField {
   }
   
   fileprivate func setupAutoDetectDirectionDropdown() {
-    if isAutoDetectDirection {
+    if type != .dropdown { return }
+    if isAutoDetectDirectionDropDown {
       if (frame.origin.y + frame.size.height + 150) > UIScreen.main.bounds.size.height {
         dropView.bottomAnchor.constraint(equalTo: self.topAnchor).isActive = true
       } else {
@@ -111,7 +112,8 @@ public class SATextfield: UITextField {
   }
   
   fileprivate func setupAutoDetectDirectionInfoview() {
-    if isAutoDetectDirection {
+    if type != .infoView { return }
+    if isAutoDetectDirectionInfoview {
       if (frame.origin.y + frame.size.height + 150) > UIScreen.main.bounds.size.height {
         infoLabelView.bottomAnchor.constraint(equalTo: self.topAnchor, constant: -3).isActive = true
         infoLabelView.vwArrow.isUp = false
@@ -173,18 +175,31 @@ public class SATextfield: UITextField {
       dropView.backgroundColor = dropDownBackgroundColor
     }
   }
-  /* dropDownTextColor : Use in
+  /* isAutoDetectDirectionDropDown : Use in
    Types: dropdown */
-  public var isAutoDetectDirection: Bool = false {
+  public var isAutoDetectDirectionDropDown: Bool = false {
     didSet {
-      if oldValue != isAutoDetectDirection {
-        if isAutoDetectDirection {
+      if oldValue != isAutoDetectDirectionDropDown {
+        if isAutoDetectDirectionDropDown {
 //          setupAutoDetectDirectionDropdown()
-//          setupAutoDetectDirectionInfoview()
+//          updateConstraints()
         }
       }
     }
   }
+  /* isAutoDetectDirectionInfoview : Use in
+   Types: infoview */
+  public var isAutoDetectDirectionInfoview: Bool = false {
+    didSet {
+      if oldValue != isAutoDetectDirectionInfoview {
+        if isAutoDetectDirectionInfoview {
+//          setupAutoDetectDirectionInfoview()
+//          updateConstraints()
+        }
+      }
+    }
+  }
+  
   
   private var isOpen = false // Check dropdown show/hide
   private lazy var dropdownBtn: UIButton = UIButton()
@@ -511,7 +526,7 @@ extension SATextfield {
     
     UIView.animate(withDuration: animationDuration, animations: {
       self.dropView.layoutIfNeeded()
-      if self.isAutoDetectDirection {
+      if self.isAutoDetectDirectionDropDown {
         if (self.frame.origin.y + self.frame.size.height + 150) > UIScreen.main.bounds.size.height {
           self.dropView.center.y -= self.dropView.frame.height / 2
         } else {
@@ -527,7 +542,7 @@ extension SATextfield {
     height.constant = 0
     NSLayoutConstraint.activate([height])
     UIView.animate(withDuration: animationDuration, animations: {
-      if self.isAutoDetectDirection {
+      if self.isAutoDetectDirectionDropDown {
         if (self.frame.origin.y + self.frame.size.height + 150) > UIScreen.main.bounds.size.height {
           self.dropView.center.y += self.dropView.frame.height / 2
         } else {

@@ -52,12 +52,12 @@ class ViewController: UIViewController, SATextfieldDelegate {
     /*
      SATextfield Dropdown upside direction textfield
      */
+    txtSADropDownUpDire.isAutoDetectDirectionDropDown = false
     txtSADropDownUpDire.type = .dropdown
     txtSADropDownUpDire.dropDownOptions = ["One","Two","Three","Four","Five"]
     txtSADropDownUpDire.dropDownBackgroundColor = UIColor.lightGray
     txtSADropDownUpDire.placeholder = "Select"
     txtSADropDownUpDire.textFieldDelegate = self
-//    txtSADropDownUpDire.isAutoDetectDirection = true
     
     /*
      SATextfield Dropdown downside direction textfield
@@ -98,8 +98,9 @@ class ViewController: UIViewController, SATextfieldDelegate {
      */
     txtSAInfoView.infoViewText = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
     txtSAInfoView.infoViewBackColor = .darkGray
-    txtSAInfoView.isAutoDetectDirection = true
     txtSAInfoView.type = .infoView
+    txtSAInfoView.isAutoDetectDirectionInfoview = true
+    
   }
   
   override func viewDidAppear(_ animated: Bool) {
