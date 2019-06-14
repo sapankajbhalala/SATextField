@@ -52,7 +52,10 @@ textfield.type = .dropdown
 ```
 Dropdown auto detect direction (Up side show/ Down side show)
 
-Using ```isAutoDetectDirection``` can define direction to show dropdown as per device screen 
+Using ```isAutoDetectDirection = true //Default value is false```
+dropdown automatically define direction to show and hide.
+
+
 
 ![alt text](https://github.com/sapankajbhalala/SATextField/blob/master/SATextfield/SATextfieldEx/Resources/Images/SATextfield_DropdownDirUp.png)
 
