@@ -52,12 +52,12 @@ class ViewController: UIViewController, SATextfieldDelegate {
     /*
      SATextfield Dropdown upside direction textfield
      */
-    txtSADropDownUpDire.isAutoDetectDirection = true
     txtSADropDownUpDire.type = .dropdown
     txtSADropDownUpDire.dropDownOptions = ["One","Two","Three","Four","Five"]
     txtSADropDownUpDire.dropDownBackgroundColor = UIColor.lightGray
     txtSADropDownUpDire.placeholder = "Select"
     txtSADropDownUpDire.textFieldDelegate = self
+//    txtSADropDownUpDire.isAutoDetectDirection = true
     
     /*
      SATextfield Dropdown downside direction textfield
@@ -100,7 +100,6 @@ class ViewController: UIViewController, SATextfieldDelegate {
     txtSAInfoView.infoViewBackColor = .darkGray
     txtSAInfoView.isAutoDetectDirection = true
     txtSAInfoView.type = .infoView
-
   }
   
   override func viewDidAppear(_ animated: Bool) {
