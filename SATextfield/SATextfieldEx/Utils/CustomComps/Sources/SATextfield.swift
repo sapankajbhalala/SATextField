@@ -414,7 +414,7 @@ extension SATextfield {
       }
     } else {
       if let img = UIImage.fromWrappedBundleImage(#imageLiteral(resourceName: "pass_hide")) {
-        passwordView.setImage(UIImage.fromWrappedBundleImage(#imageLiteral(resourceName: "pass_hide")), for: .normal)
+        passwordView.setImage(img, for: .normal)
       } else {
         passwordView.setImage(#imageLiteral(resourceName: "pass_hide"), for: .normal)
       }
