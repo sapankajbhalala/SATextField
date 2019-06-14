@@ -81,13 +81,19 @@ public class SATextfield: UITextField {
         dropView.topAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
       }
       if (frame.origin.y + frame.size.height + 150) > UIScreen.main.bounds.size.height {
-        dropdownBtn.setImage(UIImage.fromWrappedBundleImage(#imageLiteral(resourceName: "up_arrrow")), for: .normal)
+        if let img = UIImage.fromWrappedBundleImage(#imageLiteral(resourceName: "up_arrrow")) {
+          dropdownBtn.setImage(img, for: .normal)
+        }
       } else {
-        dropdownBtn.setImage(UIImage.fromWrappedBundleImage(#imageLiteral(resourceName: "down_arrow")), for: .normal)
+        if let img = UIImage.fromWrappedBundleImage(#imageLiteral(resourceName: "down_arrow")) {
+          dropdownBtn.setImage(img, for: .normal)
+        }
       }
     } else {
       dropView.topAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-      dropdownBtn.setImage(UIImage.fromWrappedBundleImage(#imageLiteral(resourceName: "down_arrow")), for: .normal)
+      if let img = UIImage.fromWrappedBundleImage(#imageLiteral(resourceName: "down_arrow")) {
+        dropdownBtn.setImage(img, for: .normal)
+      }
     }
   }
   
@@ -409,14 +415,10 @@ extension SATextfield {
     if isSecureTextEntry {
       if let img = UIImage.fromWrappedBundleImage(#imageLiteral(resourceName: "pass_show")) {
         passwordView.setImage(img, for: .normal)
-      } else {
-        passwordView.setImage(#imageLiteral(resourceName: "pass_show"), for: .normal)
       }
     } else {
       if let img = UIImage.fromWrappedBundleImage(#imageLiteral(resourceName: "pass_hide")) {
         passwordView.setImage(img, for: .normal)
-      } else {
-        passwordView.setImage(#imageLiteral(resourceName: "pass_hide"), for: .normal)
       }
     }
     passwordView.addTarget(self, action: #selector(btnPasswordTapped(sender:)), for: .touchUpInside)

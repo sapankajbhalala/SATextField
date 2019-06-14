@@ -154,6 +154,7 @@
 		B0DC015722A794FE00696557 /* SATextfieldEx */ = {
 			isa = PBXGroup;
 			children = (
+				B0DC017522A7969F00696557 /* Sources */,
 				B0DC016B22A7965300696557 /* Controller */,
 				B0DC016D22A7965300696557 /* Model */,
 				B0DC016C22A7965300696557 /* Resources */,
@@ -204,7 +205,6 @@
 		B0DC016F22A7965300696557 /* CustomComps */ = {
 			isa = PBXGroup;
 			children = (
-				B0DC017522A7969F00696557 /* Sources */,
 			);
 			path = CustomComps;
 			sourceTree = "<group>";
