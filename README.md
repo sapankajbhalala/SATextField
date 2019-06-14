@@ -48,6 +48,7 @@ textfield.type = .floaty
 ![alt text](https://github.com/sapankajbhalala/SATextField/blob/master/SATextfield/SATextfieldEx/Resources/Images/SATextfield_Floaty.png)
 
 ```swift
+textfield.isAutoDetectDirection = true
 textfield.type = .dropdown
 ```
 Dropdown auto detect direction (Up side show/ Down side show)
@@ -65,6 +66,7 @@ dropdown automatically define direction to show and hide.
 
 
 ```swift
+textfield.isAutoDetectDirection = true
 textfield.type = .infoView
 textfield.infoViewText = "Sample Text"
 textfield.infoViewBackColor = .darkGray
