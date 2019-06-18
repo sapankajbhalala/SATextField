@@ -76,11 +76,12 @@ public class SATextfield: UITextField {
   
   fileprivate func setupAutoDetectDirectionDropdown() {
     if type != .dropdown { return }
+    dropDownStartCons.isActive = false
     if isAutoDetectDirectionDropDown {
       if (frame.origin.y + frame.size.height + 150) > UIScreen.main.bounds.size.height {
-        dropView.bottomAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        dropDownStartCons = dropView.bottomAnchor.constraint(equalTo: self.topAnchor)
       } else {
-        dropView.topAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        dropDownStartCons = dropView.topAnchor.constraint(equalTo: self.bottomAnchor)
       }
       if (frame.origin.y + frame.size.height + 150) > UIScreen.main.bounds.size.height {
         if let img = UIImage.fromWrappedBundleImage(#imageLiteral(resourceName: "up_arrrow")) {
@@ -92,11 +93,12 @@ public class SATextfield: UITextField {
         }
       }
     } else {
-      dropView.topAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+      dropDownStartCons = dropView.topAnchor.constraint(equalTo: self.bottomAnchor)
       if let img = UIImage.fromWrappedBundleImage(#imageLiteral(resourceName: "down_arrow")) {
         dropdownBtn.setImage(img, for: .normal)
       }
     }
+    dropDownStartCons.isActive = true
   }
   
   private func setupUIInfoview() {
@@ -114,21 +116,25 @@ public class SATextfield: UITextField {
   
   fileprivate func setupAutoDetectDirectionInfoview() {
     if type != .infoView { return }
+    infoViewStartCons.isActive = false
+    infoViewArrowStartCons.isActive = false
     if isAutoDetectDirectionInfoview {
       if (frame.origin.y + frame.size.height + 150) > UIScreen.main.bounds.size.height {
-        infoLabelView.bottomAnchor.constraint(equalTo: self.topAnchor, constant: -3).isActive = true
+        infoViewStartCons = infoLabelView.bottomAnchor.constraint(equalTo: self.topAnchor, constant: -3)
         infoLabelView.vwArrow.isUp = false
-        infoLabelView.vwArrow.topAnchor.constraint(equalTo: infoLabelView.bottomAnchor, constant: 0).isActive = true
+        infoViewArrowStartCons = infoLabelView.vwArrow.topAnchor.constraint(equalTo: infoLabelView.bottomAnchor, constant: 0)
       } else {
-        infoLabelView.topAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        infoViewStartCons = infoLabelView.topAnchor.constraint(equalTo: self.bottomAnchor)
         infoLabelView.vwArrow.isUp = true
-        infoLabelView.vwArrow.bottomAnchor.constraint(equalTo: infoLabelView.topAnchor, constant: 0).isActive = true
+        infoViewArrowStartCons = infoLabelView.vwArrow.bottomAnchor.constraint(equalTo: infoLabelView.topAnchor, constant: 0)
       }
     } else {
-      infoLabelView.topAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+      infoViewStartCons = infoLabelView.topAnchor.constraint(equalTo: self.bottomAnchor)
       infoLabelView.vwArrow.isUp = true
-      infoLabelView.vwArrow.bottomAnchor.constraint(equalTo: infoLabelView.topAnchor, constant: 0).isActive = true
+      infoViewArrowStartCons = infoLabelView.vwArrow.bottomAnchor.constraint(equalTo: infoLabelView.topAnchor, constant: 0)
     }
+    infoViewStartCons.isActive = true
+    infoViewArrowStartCons.isActive = true
   }
 
   // ===================
@@ -169,6 +175,9 @@ public class SATextfield: UITextField {
   }
   private lazy var dropView = DropDownView()
   private var height = NSLayoutConstraint()
+  private var dropDownStartCons = NSLayoutConstraint()
+  private var infoViewStartCons = NSLayoutConstraint()
+  private var infoViewArrowStartCons = NSLayoutConstraint()
   /* dropDownBackgroundColor : Use in
    Types: dropdown */
   public var dropDownBackgroundColor: UIColor = .white {
@@ -182,8 +191,7 @@ public class SATextfield: UITextField {
     didSet {
       if oldValue != isAutoDetectDirectionDropDown {
         if isAutoDetectDirectionDropDown {
-//          setupAutoDetectDirectionDropdown()
-//          updateConstraints()
+          setupAutoDetectDirectionDropdown()
         }
       }
     }
@@ -194,8 +202,7 @@ public class SATextfield: UITextField {
     didSet {
       if oldValue != isAutoDetectDirectionInfoview {
         if isAutoDetectDirectionInfoview {
-//          setupAutoDetectDirectionInfoview()
-//          updateConstraints()
+          setupAutoDetectDirectionInfoview()
         }
       }
     }
